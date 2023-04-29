@@ -27,7 +27,7 @@ namespace FishDebt.Content.Items.Weapons
             Item.useTime = 10;
             Item.useAnimation = 20;
             Item.useAmmo = AmmoID.Rocket;
-            Item.shoot = 7;
+            Item.shoot = ModContent.ProjectileType<Projectiles.jellyfishproj>();
             Item.autoReuse = true;
             Item.shootSpeed = 10;
 

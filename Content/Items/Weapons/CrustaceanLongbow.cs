@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
@@ -16,17 +17,19 @@ namespace FishDebt.Content.Items.Weapons
         public override void SetDefaults()
         {
             // Hitbox
-            Item.width = 17;
+            Item.width = 10;
             Item.height = 35;
 
             // Use and Animation Style
             Item.useStyle = ItemUseStyleID.Shoot;
-            Item.useTime = 35;
+            Item.useTime = 7;//one fifth of the use animation, fires 5 at once
             Item.useAnimation = 35;
             Item.useAmmo = AmmoID.Arrow;
-            Item.shoot = ModContent.ProjectileType<Goldfish>();
-            Item.shootSpeed = 10;
+            Item.shoot = ModContent.ProjectileType<Projectiles.CrabClipper>();
+            Item.shootSpeed = 15;
             Item.autoReuse = true;
+            Item.reuseDelay = 10;
+            Item.consumeAmmoOnLastShotOnly = true;
 
             // Damage Values
             Item.DamageType = DamageClass.Ranged;
@@ -40,5 +43,20 @@ namespace FishDebt.Content.Items.Weapons
             // Sound
             Item.UseSound = SoundID.Item1;
         }
-    }
+       public override Vector2? HoldoutOffset()
+       {
+			return new Vector2(-6f, -2f);//changes position in hands
+	   }
+
+       public override void ModifyShootStats(Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)//makes slighly inaccurate
+       {
+			velocity = velocity.RotatedByRandom(MathHelper.ToRadians(10));
+            if (type == ProjectileID.WoodenArrowFriendly) 
+            { // or ProjectileID.WoodenArrowFriendly
+				type = ModContent.ProjectileType<Projectiles.CrabClipper>();; // or ProjectileID.FireArrow;
+	   
+       }    }
+
+     
+    }   
 }
