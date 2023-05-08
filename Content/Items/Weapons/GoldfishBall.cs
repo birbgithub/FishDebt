@@ -1,7 +1,9 @@
+using FishDebt.Content.Items;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
-using Terraria.GameContent.Creative;
+using Terraria.ModLoader;
 
 namespace FishDebt.Content.Items.Weapons
 {
@@ -26,6 +28,15 @@ namespace FishDebt.Content.Items.Weapons
 
             Projectile.aiStyle = -1;
             Projectile.penetrate = -1;
+
         }
+        
+        public override void AI()
+        {
+            int dustnumber = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Water, 0f, 0f, 200, default(Color), 0.8f);
+	        Main.dust[dustnumber].velocity *= 0.3f;
+        
+        }
+         
     }
 }

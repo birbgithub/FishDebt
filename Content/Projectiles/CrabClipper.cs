@@ -98,21 +98,23 @@ namespace FishDebt.Content.Projectiles
 	
 		public override void AI()
 		{
-			// All projectiles have timers that help to delay certain events
-			// Projectile.ai[0], Projectile.ai[1] — timers that are automatically synchronized on the client and server
-			// Projectile.localAI[0], Projectile.localAI[0] — only on the client
-			// In this example, a timer is used to control the fade in / out and despawn of the projectile
+		
+			
+		
+				// All projectiles have timers that help to delay certain events
+				// Projectile.ai[0], Projectile.ai[1] — timers that are automatically synchronized on the client and server
+				// Projectile.localAI[0], Projectile.localAI[0] — only on the client
 
 
-			// Loop through the 4 animation frames, spending 5 ticks on each
-			// Projectile.frame — index of current frame
-			if (++Projectile.frameCounter >= 5)
-			{
+				// Loop through the 4 animation frames, spending 5 ticks on each
+				// Projectile.frame — index of current frame
+				if (++Projectile.frameCounter >= 5)
+				{
 				Projectile.frameCounter = 0;
 				// Or more compactly Projectile.frame = ++Projectile.frame % Main.projFrames[Projectile.type];
 				if (++Projectile.frame >= Main.projFrames[Projectile.type])
 					Projectile.frame = 0;
-			}
+				}
 
 			// Despawn this projectile after 1 second (60 ticks)
 			// You can use Projectile.timeLeft = 60f in SetDefaults() for same goal

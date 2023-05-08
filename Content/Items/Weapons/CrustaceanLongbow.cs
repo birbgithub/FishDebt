@@ -34,14 +34,14 @@ namespace FishDebt.Content.Items.Weapons
             // Damage Values
             Item.DamageType = DamageClass.Ranged;
             Item.damage = 42;
-            Item.knockBack = 14.0f;
+            Item.knockBack = 3.0f;
             Item.crit = 22;
 
             // Misc
             Item.rare = 3;
 
             // Sound
-            Item.UseSound = SoundID.Item1;
+            Item.UseSound = SoundID.Item127;
         }
        public override Vector2? HoldoutOffset()
        {

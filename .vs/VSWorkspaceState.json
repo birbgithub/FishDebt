@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\Content",
-    "\\Content\\Items"
+    "\\Content\\Items",
+    "\\Content\\Items\\Weapons",
+    "\\Content\\Projectiles"
   ],
-  "SelectedNode": "\\Content\\Items\\FishSoul.cs",
+  "SelectedNode": "\\Content\\Items\\Weapons\\PelagicTomeOfWisdom.cs",
   "PreviewInSolutionExplorer": false
 }
